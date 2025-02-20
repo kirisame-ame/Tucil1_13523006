@@ -1,3 +1,5 @@
+
+
 public class Board {
     private static int rows;
     private static int cols;
@@ -72,17 +74,29 @@ public class Board {
             for(int j=0;j<pieceCols;j++){
                 if(pieceShape[i][j]){
                     System.out.print(c);
-                    if(j!=pieceCols-1){
-                        System.out.print(" ");
-                    }
+                }
+                else{
+                    System.out.print(" ");
                 }
             }
             System.out.println("");
         }
         
     }
+    public static void resetBoard(){
+        rows = 0;
+        cols = 0;
+        board = null;
+        pieceNum = 0;
+        shape = "";
+        pieces = null;
+    }
 
     public static void printAllPieces(){
+        if(pieces==null){
+            System.err.println("Err: Board has not been set properly");
+            return;
+        }
         System.out.println("");
         System.out.println("Pieces Count: "+pieceNum);
         for (Piece p : pieces) {

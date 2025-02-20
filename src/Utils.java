@@ -3,6 +3,24 @@ public class Utils {
         for (char c : str.toCharArray()){
             if (!Character.isDigit(c)) return false;
         }
-    return true;
+        return true;
+    }
+    public static boolean isCapital(char c){
+        return c >= 'A' && c <= 'Z';
+    }
+    public static char idToChar(int id){
+        return (char) (id-1 +'A');
+    }
+    public static int charToId(char c){
+        return c -'A'+1;
+    }
+    public static char getFirstLetter(String str)
+    {
+        for (char c : str.toCharArray())
+        {
+            if(isCapital(c)) return c;
+        }
+        System.err.println("No character in string: " + str);
+        return '-';
     }
 }
