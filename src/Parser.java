@@ -10,8 +10,12 @@ public class Parser {
      * Main wrapper for file input
      * @param filename
      */
-    public static void startInput(String filename){
-        if(!readInput(filename)) Board.resetBoard();
+    public static boolean startInput(String filename){
+        if(!readInput(filename)){
+            Board.resetBoard();
+            return false;
+        } 
+        return true;
     }
 
     private static boolean readInput(String fileName){
@@ -119,6 +123,7 @@ public class Parser {
         else{
             Board.setRows(Integer.parseInt(params[0]));
             Board.setCols(Integer.parseInt(params[1]));
+            Board.setBoard(new int[Board.getRows()][Board.getCols()]);
             Board.setPieceNums(Integer.parseInt(params[2]));   
             return true;                         
         }
