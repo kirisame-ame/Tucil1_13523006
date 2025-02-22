@@ -1,0 +1,48 @@
+.main{
+    -fx-background-image: url("triangle_grid.png");
+    -fx-pref-width:800;
+    -fx-pref-height:500;
+}
+.text{
+    -fx-font-smoothing-type:gray;
+}
+.text_field{
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color:transparent;
+    -fx-text-box-border: transparent;
+    -fx-font-family:"sans-serif";
+    -fx-font-size:16;
+    -fx-max-width:803;
+    -fx-min-height:80;
+    -fx-max-height:80;
+}
+.puzzle_grid{
+    -fx-border-width:4;
+    -fx-grid-lines-visible:true;
+    -fx-alignment:center;
+}
+.button{
+    -fx-background-radius: 0;
+    -fx-cursor:"hand";
+    -fx-min-width:200;
+    -fx-min-height:100;
+    -fx-font-family:"sans-serif";
+    -fx-font-size:28;
+    -fx-text-alignment:"center"
+}
+.button_load{
+    -fx-background-color: "#f7b845";    
+}
+.button_solve{
+    -fx-background-color:"#f09cb4"
+}
+.button_img{
+    -fx-background-color:"#9acb7b"
+}
+.button_txt{
+    -fx-background-color:"#ee847d"
+}
+.hyperlink{
+    -fx-border-color: transparent;
+    -fx-padding: 4 0 4 0;
+}

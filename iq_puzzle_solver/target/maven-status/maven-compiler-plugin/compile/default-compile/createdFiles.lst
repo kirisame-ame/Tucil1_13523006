@@ -1,4 +1,9 @@
-module-info.class
-kirisame\SecondaryController.class
+kirisame\iq_puzzle\Parser.class
+kirisame\iq_puzzle\Colour.class
 kirisame\App.class
+kirisame\iq_puzzle\Utils.class
+module-info.class
+kirisame\iq_puzzle\Board.class
 kirisame\PrimaryController.class
+kirisame\iq_puzzle\Main.class
+kirisame\iq_puzzle\Piece.class

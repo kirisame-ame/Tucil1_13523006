@@ -1,12 +1,12 @@
 package kirisame;
 
+import java.io.IOException;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import java.io.IOException;
 
 /**
  * JavaFX App
@@ -15,10 +15,14 @@ public class App extends Application {
 
     private static Scene scene;
 
+    public void openUrl(String url){
+        getHostServices().showDocument(url);
+    }
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 640, 480);
+        scene = new Scene(loadFXML("primary"), 900, 500);
         stage.setScene(scene);
+        stage.setTitle("IQ Puzzle Solver by Kirisame-ame");
         stage.show();
     }
 

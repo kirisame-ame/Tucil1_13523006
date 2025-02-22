@@ -1,16 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Button?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kirisame.PrimaryController">
-   <children>
-      <Label text="Primary View" />
-      <Button fx:id="primaryButton" text="Switch to Secondary View" onAction="#switchToSecondary"/>
-   </children>
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" spacing="20.0" styleClass="main" stylesheets="@app.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kirisame.PrimaryController">
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
+   <children>
+      <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="800.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+               <children>
+                  <Label text="IQ Puzzler" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="Malgun Gothic Bold" size="50.0" />
+                     </font>
+                  </Label>
+                  <Label text="Solver">
+                     <font>
+                        <Font name="Malgun Gothic Bold" size="50.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="@midori.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+               <image>
+                  <Image url="@momoi.png" />
+               </image>
+            </ImageView>
+         </children>
+      </GridPane>
+      <VBox alignment="TOP_CENTER">
+         <children>
+            <Label contentDisplay="RIGHT" text="by">
+               <graphic>
+                  <Hyperlink fx:id="profile" alignment="CENTER_RIGHT" contentDisplay="CENTER" onAction="#openProfile" stylesheets="@app.css" text="kirisame-ame" />
+               </graphic>
+            </Label>
+            <GridPane fx:id="puzzleGrid" styleClass="puzzle_grid" stylesheets="@app.css" visible="false">
+            </GridPane>
+            <TextArea fx:id="textArea" editable="false" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" styleClass="text_field" stylesheets="@app.css" text="Load and solve a puzzle ^_^ パズルを読み込んで解く！！" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Button fx:id="loadButton" mnemonicParsing="false" onAction="#loadPuzzle" styleClass="button_load" stylesheets="@app.css" text="Load" textOverrun="CLIP" wrapText="true">
+                     <font>
+                        <Font name="Arial" size="21.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" styleClass="button_solve" stylesheets="@app.css" text="Solve" />
+                  <Button mnemonicParsing="false" styleClass="button_img" stylesheets="@app.css" text="Export&#10;Image" textAlignment="CENTER" wrapText="true" />
+                  <Button mnemonicParsing="false" styleClass="button_txt" stylesheets="@app.css" text="Export &#10;txt" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
 </VBox>
