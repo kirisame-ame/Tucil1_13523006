@@ -62,6 +62,8 @@ public class PrimaryController extends App {
     }
     @FXML
     protected void loadPuzzle(){
+        imgButton.setDisable(true);
+        txtButton.setDisable(true);
         Board.resetBoard();
         String path = readFile();
         if(path!=null){
@@ -147,7 +149,8 @@ public class PrimaryController extends App {
                 char let = Utils.idToChar(Board.getBoard()[r][c]);
                 String color =Color.colorMap.get(let);
                 Label cell = new Label(Character.toString(let));
-                cell.setMinSize(gridHeight/rows, gridHeight/rows);
+                int size = gridHeight/rows;
+                cell.setMinSize(size, size);
                 cell.setAlignment(Pos.CENTER);
                 cell.setStyle("-fx-font-size: 18px; -fx-font-weight: bold; " +
                         "-fx-border-color: black; -fx-background-color: "+color+";");

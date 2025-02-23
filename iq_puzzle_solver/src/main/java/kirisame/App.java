@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 /**
@@ -26,6 +27,7 @@ public class App extends Application {
         scene = new Scene(loadFXML("primary"), 900, 700);
         stage.setScene(scene);
         stage.setTitle("IQ Puzzle Solver by Kirisame-ame");
+        stage.getIcons().add(new Image(App.class.getResourceAsStream("logo.png")));
         stage.show();
         unblurTextArea();
     }

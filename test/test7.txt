@@ -1,0 +1,19 @@
+7 7 3
+DEFAULT
+SSSSSSS
+S     S
+S     S
+S     S
+S     S
+S     S
+SSSSSSS
+I   I
+ I I
+  I
+ I I
+I   I
+ UUU
+U U U
+UU UU
+U U U
+ UUU

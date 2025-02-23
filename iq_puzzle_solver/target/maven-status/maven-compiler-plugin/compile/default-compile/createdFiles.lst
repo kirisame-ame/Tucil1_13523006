@@ -1,6 +1,7 @@
 kirisame\iq_puzzle\Color.class
 kirisame\iq_puzzle\Parser.class
 kirisame\App.class
+kirisame\Launcher.class
 kirisame\iq_puzzle\Utils.class
 module-info.class
 kirisame\iq_puzzle\Board.class
