@@ -21,13 +21,13 @@ Tucil1_13523006/
 │   │   │   ├── iq_puzzle/ : modified version of ..src/
 │   │   │   ├── App.java
 │   │   │   ├── Launcher.java
-│   │   │   ├── PrimaryController.java
-│   │   ├── resources/kirisame/ : Frontend GUI resources
+│   │   │   └── PrimaryController.java
+│   │   └── resources/kirisame/ : Frontend GUI resources
 │   ├── target/
 │   └── pom.xml
 ├── src/ : CLI program source code
 ├── test/ : Testing results
-├── README.md
+└── README.md
 ```
 ## Requirements
 None if installing with the installer, otherwise install javaFX 23 to run the GUI version. This program was made with JDK 23.
