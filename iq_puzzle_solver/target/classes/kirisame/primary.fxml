@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" spacing="20.0" styleClass="main" stylesheets="@app.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kirisame.PrimaryController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="700.0" prefWidth="900.0" spacing="20.0" styleClass="main" stylesheets="@app.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kirisame.PrimaryController">
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
@@ -62,21 +62,31 @@
                   <Hyperlink fx:id="profile" alignment="CENTER_RIGHT" contentDisplay="CENTER" onAction="#openProfile" stylesheets="@app.css" text="kirisame-ame" />
                </graphic>
             </Label>
-            <GridPane fx:id="puzzleGrid" styleClass="puzzle_grid" stylesheets="@app.css" visible="false">
-            </GridPane>
-            <TextArea fx:id="textArea" editable="false" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" styleClass="text_field" stylesheets="@app.css" text="Load and solve a puzzle ^_^ パズルを読み込んで解く！！" />
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <GridPane fx:id="puzzleGrid" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="800.0" styleClass="puzzle_grid" stylesheets="@app.css" VBox.vgrow="NEVER">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin></GridPane>
+            <VBox alignment="CENTER" maxWidth="800.0" styleClass="bottom_box" stylesheets="@app.css">
                <children>
-                  <Button fx:id="loadButton" mnemonicParsing="false" onAction="#loadPuzzle" styleClass="button_load" stylesheets="@app.css" text="Load" textOverrun="CLIP" wrapText="true">
-                     <font>
-                        <Font name="Arial" size="21.0" />
-                     </font>
-                  </Button>
-                  <Button mnemonicParsing="false" styleClass="button_solve" stylesheets="@app.css" text="Solve" />
-                  <Button mnemonicParsing="false" styleClass="button_img" stylesheets="@app.css" text="Export&#10;Image" textAlignment="CENTER" wrapText="true" />
-                  <Button mnemonicParsing="false" styleClass="button_txt" stylesheets="@app.css" text="Export &#10;txt" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
+                  <TextArea id="textArea" fx:id="textArea" cacheShape="false" editable="false" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" scaleShape="false" snapToPixel="false" styleClass="text_field" stylesheets="@app.css" text="Load and solve a puzzle ^_^ パズルを読み込んで解く！！" wrapText="true">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TextArea>
+                  <HBox alignment="CENTER" maxWidth="800.0" prefWidth="800.0">
+                     <children>
+                        <Button fx:id="loadButton" mnemonicParsing="false" onAction="#loadPuzzle" styleClass="button_load" stylesheets="@app.css" text="Load" textOverrun="CLIP" wrapText="true">
+                           <font>
+                              <Font name="Arial" size="21.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="solveButton" mnemonicParsing="false" onAction="#solvePuzzle" styleClass="button_solve" stylesheets="@app.css" text="Solve" />
+                        <Button fx:id="imgButton" disable="true" mnemonicParsing="false" onAction="#saveImage" styleClass="button_img" stylesheets="@app.css" text="Export&#10;Image" textAlignment="CENTER" wrapText="true" />
+                        <Button fx:id="txtButton" disable="true" mnemonicParsing="false" onAction="#saveText" styleClass="button_txt" stylesheets="@app.css" text="Export &#10;txt" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
+                     </children>
+                  </HBox>
                </children>
-            </HBox>
+            </VBox>
          </children>
       </VBox>
    </children>

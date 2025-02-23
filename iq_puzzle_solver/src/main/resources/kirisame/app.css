@@ -1,7 +1,7 @@
 .main{
     -fx-background-image: url("triangle_grid.png");
-    -fx-pref-width:800;
-    -fx-pref-height:500;
+    -fx-pref-width:900;
+    -fx-pref-height:700;
 }
 .text{
     -fx-font-smoothing-type:gray;
@@ -17,12 +17,21 @@
     -fx-max-height:80;
 }
 .puzzle_grid{
-    -fx-border-width:4;
-    -fx-grid-lines-visible:true;
     -fx-alignment:center;
+}
+.puzzle_grid.label{
+    -fx-border-width:2;
+    -fx-border-color:"#000000";
+}
+.bottom_box{
+    -fx-border-color:"#000000";
+    -fx-border-width:2;
 }
 .button{
     -fx-background-radius: 0;
+    -fx-border-color:transparent;
+    -fx-background-insets: 0;
+    -fx-border-width:0;
     -fx-cursor:"hand";
     -fx-min-width:200;
     -fx-min-height:100;

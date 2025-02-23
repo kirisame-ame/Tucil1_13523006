@@ -1,8 +1,7 @@
-package kirisame.iq_puzzle;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Colour {
+public class Color {
     private static final Map<Character, String> colorMap = new HashMap<>();
 
     static {

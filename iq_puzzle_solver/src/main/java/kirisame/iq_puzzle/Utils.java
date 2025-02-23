@@ -10,7 +10,10 @@ public class Utils {
         return c >= 'A' && c <= 'Z';
     }
     public static char idToChar(int id){
-        return (char) (id-1 +'A');
+        if(id>0){
+            return (char) (id-1 +'A');
+        }
+        return '-';
     }
     public static int charToId(char c){
         return c -'A'+1;

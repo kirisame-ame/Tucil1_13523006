@@ -58,7 +58,7 @@ public class Board {
     public static void printBoard(){
         for(int[] row:board){
             for(int j=0;j<row.length;j++){
-                Colour.colourPrint(Utils.idToChar(row[j]));
+                Color.colourPrint(Utils.idToChar(row[j]));
             }
             System.out.println("");
         }

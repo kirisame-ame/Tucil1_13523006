@@ -1,6 +1,5 @@
 package kirisame.iq_puzzle;
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class Board {
     private static int rows;
@@ -11,6 +10,7 @@ public class Board {
     public static int iter;
     // Id naming convention, A-Z -> 1-26
     private static ArrayList<Piece> pieces = new ArrayList<>();
+    public static StringBuilder sb;
 
     public static int getRows(){
         return rows;
@@ -56,13 +56,16 @@ public class Board {
         }
     }
     public static void printBoard(){
+        sb = new StringBuilder();
         for(int[] row:board){
             for(int j=0;j<row.length;j++){
-                Colour.colourPrint(Utils.idToChar(row[j]));
+                char let = Utils.idToChar(row[j]);
+                Color.colorPrint(let);
+                sb.append(let);
             }
             System.out.println("");
+            sb.append("\n");
         }
-        System.out.println("Combinations tried: "+  String.format(Locale.US,"%,d", iter));
     }
     public static int getPieceNums(){
         return pieceNum;
@@ -113,7 +116,7 @@ public class Board {
         }
         
     }
-    private static void zeroBoard(){
+    public static void zeroBoard(){
         for(int i=0;i<rows;i++){
             for(int j=0;j<cols;j++){
                 board[i][j]=0;

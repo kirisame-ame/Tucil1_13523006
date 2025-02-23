@@ -4,8 +4,11 @@ import java.io.IOException;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
 /**
@@ -20,10 +23,11 @@ public class App extends Application {
     }
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 900, 500);
+        scene = new Scene(loadFXML("primary"), 900, 700);
         stage.setScene(scene);
         stage.setTitle("IQ Puzzle Solver by Kirisame-ame");
         stage.show();
+        unblurTextArea();
     }
 
     static void setRoot(String fxml) throws IOException {
@@ -34,7 +38,15 @@ public class App extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }
-
+    private void unblurTextArea(){
+        TextArea textArea = (TextArea)scene.lookup("#textArea");
+        textArea.setCache(false);
+        ScrollPane sp = (ScrollPane)textArea.getChildrenUnmodifiable().get(0);
+        sp.setCache(false);
+        for (Node node : sp.getChildrenUnmodifiable()) {
+            node.setCache(false);
+        } 
+    }
     public static void main(String[] args) {
         launch();
     }
