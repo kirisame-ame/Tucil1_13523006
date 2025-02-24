@@ -1,0 +1,10 @@
+SSSSSSS
+SIUUUIS
+SUIUIUS
+SUUIUUS
+SUIUIUS
+SIUUUIS
+SSSSSSS
+Solution Found
+Execution time: 0ms
+Permutations tried: 131

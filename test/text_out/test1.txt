@@ -1,0 +1,5 @@
+AB
+BB
+Solution Found
+Execution time: 0ms
+Permutations tried: 4

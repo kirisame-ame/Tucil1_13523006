@@ -1,0 +1,8 @@
+ABBCC
+AABDC
+EEDDG
+EEFFG
+EFFFG
+Solution Found
+Execution time: 314ms
+Permutations tried: 487,428

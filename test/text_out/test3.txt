@@ -1,0 +1,6 @@
+----
+----
+----
+No Solution Found
+Execution time: 766ms
+Permutations tried: 1,570,656

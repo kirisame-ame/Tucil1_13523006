@@ -29,3 +29,5 @@ iq_puzzle_solver/target/classes/kirisame/primary.fxml
 /iq_puzzle_solver/target
 /iq_puzzle_solver/target
 /iq_puzzle_solver/target
+*.tmp
+*.docx
